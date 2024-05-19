@@ -1,0 +1,29 @@
+#bg-pesquisa{
+    width: 80rem;
+    border-radius: 3rem;
+    background-color: #3C5CAA;
+    color: #243766;
+    margin-top: 5rem;
+}
+
+#bg-pesquisa h4{
+    color: #ffffff;
+}
+
+#bg-pesquisa-sub{
+    width: 95%;
+    border-radius: 3rem;
+    background-color: #CDDDEE;
+}
+
+#btn-pesquisa{
+    font-size: 2.5rem; 
+    color: #243766;
+}
+#btn-pesquisa:hover{
+    color: white;
+}
+
+#bg-pesquisa .form-control{
+    background-color: white;
+}

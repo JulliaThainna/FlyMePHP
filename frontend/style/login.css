@@ -1,0 +1,27 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+    color: #3C5CAA;
+    margin: 1rem 1rem 1.5rem 1.5rem;
+    background-color: #fafafa;
+}
+
+.btn{
+    background-color: #3C5CAA;
+}
+
+.logo-flyme{
+    width: 25rem;
+}
+
+.botao-login{
+    width: 10rem;
+}
+
+.botao-login:hover{
+    background-color: #243766;
+    color: #ffffff;
+}
+
+span:hover{
+    color: #243766
+}
