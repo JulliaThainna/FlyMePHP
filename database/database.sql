@@ -1,4 +1,4 @@
-CREATE TABLE user(
+CREATE TABLE usuario(
     id INT PRIMARY KEY AUTO_INCREMENT,
     cpf VARCHAR(11) UNIQUE NOT NULL,
     nome VARCHAR(150) NOT NULL,
@@ -6,19 +6,19 @@ CREATE TABLE user(
     senha VARCHAR(100) NOT NULL,
     telefone VARCHAR(20) NOT NULL,
     genero ENUM('feminino', 'masculino', 'outro'),
-    data_nasc DATE NOT NULL,
-) ENGINE = InnoDB;
+    data_nasc DATE NOT NULL
+);
 
 CREATE TABLE companhia_aerea(
     id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(150) NOT NULL, 
     cpnj VARCHAR(150) NOT NULL,
     endereco VARCHAR(500) NOT NULL,
-    telefone VARCHAR(20) NOT NULL,
-) ENGINE = InnoDB;
+    telefone VARCHAR(20) NOT NULL
+);
 
 CREATE TABLE voo(
-    id INT PRIMARY KEY AUTO_INCREMENT.
+    id INT PRIMARY KEY AUTO_INCREMENT,
     companhia_aerea_id INT NOT NULL,
     origem VARCHAR(150) NOT NULL,    
     destino VARCHAR(150) NOT NULL,
@@ -26,21 +26,21 @@ CREATE TABLE voo(
     duracao INT NOT NULL,
     assentos INT NOT NULL,
     valor FLOAT NOT NULL,
-    FOREIGN KEY (companhia_aerea_id) REFERENCES companhia_aerea(id) ON DELETE CASCADE,
-) ENGINE = InnoDB;   
+    FOREIGN KEY (companhia_aerea_id) REFERENCES companhia_aerea(id) ON DELETE CASCADE
+);   
 
 CREATE TABLE reserva(
     id INT PRIMARY KEY AUTO_INCREMENT,
-    user_id INT NOT NULL,
+    usuario_id INT NOT NULL,
     voo_id INT NOT NULL,
     qtd_passagem INT NOT NULL,
     situacao VARCHAR(50) NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE,
-    FOREIGN KEY (voo_id) REFERENCES voo(id) ON DELETE CASCADE,
-) ENGINE = InnoDB;
+    FOREIGN KEY (usuario_id) REFERENCES usuario(id) ON DELETE CASCADE,
+    FOREIGN KEY (voo_id) REFERENCES voo(id) ON DELETE CASCADE
+);
 
 CREATE TABLE admin(
     id INT PRIMARY KEY AUTO_INCREMENT,
     email VARCHAR(50) NOT NULL,
-    senha VARCHAR(100) NOT NULL,
-) ENGINE = InnoDB;
+    senha VARCHAR(100) NOT NULL
+);
