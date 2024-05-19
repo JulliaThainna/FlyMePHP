@@ -19,9 +19,7 @@
     <link rel="stylesheet" href="../style/main.css">
 </head>
 <body>
-  <?php
-    include 'menu.php';
-  ?>
+  <?php include 'menu.php'; ?>
   
   <div class="row d-flex justify-content-center align-items-center">
     <div class="col-md-6 mt-5">

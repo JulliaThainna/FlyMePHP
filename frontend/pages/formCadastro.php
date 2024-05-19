@@ -30,43 +30,43 @@
 
     <div class="col-md-5 px-5">
       <h1 class="text-center">Criar nova conta</h1>
-      <form onsubmit="return false;">
+      <form action="cadastrarUsuario.php" method="post">
         <div class="mt-3">
           <label for="nome" class="form-label">Nome</label>
-          <input type="text" class="form-control rounded-5" id="nome">
+          <input type="text" class="form-control rounded-5" name="nome">
         </div>
         <div class="mt-3">
           <label for="cpf" class="form-label">CPF</label>
-          <input type="text" class="form-control rounded-5" id="cpf">
+          <input type="text" class="form-control rounded-5" name="cpf">
         </div>
         <div class="mt-3">
           <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control rounded-5" id="email">
+          <input type="email" class="form-control rounded-5" name="email">
         </div>
         <div class="mt-3">
           <label for="senha" class="form-label">Senha</label>
-          <input type="password" class="form-control rounded-5" id="senha">
+          <input type="password" class="form-control rounded-5" name="senha">
         </div>
         <div class="row">
           <div class="col-md-6 mt-3">
             <label for="data_nasc" class="form-label">Data de Nascimento</label>
-            <input type="date" class="form-control rounded-5" id="data_nasc">
+            <input type="date" class="form-control rounded-5" name="data_nasc">
           </div>
           <div class="col-md-6 mt-3">
             <label for="genero" class="form-label">Gênero</label>
-              <select class="form-control rounded-5" id="genero">
+              <select class="form-control rounded-5" name="genero">
                 <option value="Masculino">Masculino</option>
                 <option value="Feminino">Feminino</option>
                 <option value="Outro">Outro</option>
               </select>
           </div>
           <div class="mt-3">
-            <label for="tel" class="form-label">Telefone</label>
-            <input type="number" class="form-control rounded-5" id="tel">
+            <label for="telefone" class="form-label">Telefone</label>
+            <input type="number" class="form-control rounded-5" name="telefone">
           </div>
         </div>
         <div class="d-flex justify-content-center align-items-center">
-          <button type="submit" class="btn btn-primary rounded-4 mt-5 botao-login" onclick="cadastrarUsuario()">Cadastrar</button>
+          <button type="submit" class="btn btn-primary rounded-4 mt-5 botao-login">Cadastrar</button>
         </div>
       </form>
     </div>
@@ -74,7 +74,7 @@
 
   <!--Modals-->
   <!--Modal alterações realizadas com sucesso-->
-  <div class="modal fade" id="modal-cadastroUser" tabindex="-1">
+  <!-- <div class="modal fade" id="modal-cadastroUser" tabindex="-1">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -88,6 +88,6 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 </body>
 </html>

@@ -18,9 +18,7 @@
     <link rel="stylesheet" href="../style/main.css">
 </head>
 <body>
-  <?php
-    include 'menu.php';
-  ?> 
+  <?php include 'menu.php'; ?> 
 
   <div class="container mt-5">
     <h3 class="mt-4 pt-3 fw-bold">Gerenciar minhas reservas</h3>
