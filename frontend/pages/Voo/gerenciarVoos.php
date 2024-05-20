@@ -39,7 +39,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body">
-            <form onsubmit = "return false;">
+            <form action="cadastrarVoo.php" method="post">
             <div class="mt-3">
                 <label for="ca" class="form-label">Companhia aérea</label>
                 <input type="text" class="form-control rounded-5" id="ca" required>
@@ -54,7 +54,7 @@
             </div>
             <div class="mt-3">
                 <label for="data-horario" class="form-label">Data/Horário</label>
-                <input type="datetime-local" class="form-control rounded-5" id="data-horario" required>
+                <input type="datetime-local" class="form-control rounded-5" id="datahora" required>
             </div>
             <div class="mt-3">
                 <label for="duracao" class="form-label">Duração (em horas)</label>
@@ -64,14 +64,14 @@
                 <label for="assentos" class="form-label">Assentos</label>
                 <input type="number" min="0" class="form-control rounded-5" id="assentos" required>
             </div>
-            <div class="mt-3">
+            <!-- <div class="mt-3">
                 <label for="classe" class="form-label">Classe</label>
                 <select class="form-select" id="classe" required style="background-color: #E6E7E8; border-radius: 2rem;">
                 <option value="Econômica" selected>Econômica</option>
                 <option value="Executiva">Executiva</option>
                 <option value="Primeira">Primeira classe</option>
                 </select>
-            </div>
+            </div> -->
             <div class="mt-3">
                 <label for="valor" class="form-label">Valor</label>
                 <input type="number" min="0" step="any" class="form-control rounded-5" id="valor" required>

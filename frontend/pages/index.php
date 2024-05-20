@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FlyMe - Login</title>
-  <link rel="icon" href="../imgs/icon.png">
+  <link rel="icon" href="/FlyMePHP/frontend/imgs/icon.png">
   <!--Bootstrap-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
@@ -14,18 +14,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!--CSS-->
-  <link rel="stylesheet" href="../style/login.css">
-  <link rel="stylesheet" href="../style/main.css">
+  <link rel="stylesheet" href="/FlyMePHP/frontend/style/login.css">
+  <link rel="stylesheet" href="/FlyMePHP/frontend/style/main.css">
 </head>
 <body>
   <header>
     <div class="container mt-4">
-      <img src="../imgs/logo-flyme.svg" alt="FlyMe" class="img-fluid" style="width: 25rem;">
+      <img src="/FlyMePHP/frontend/imgs/logo-flyme.svg" alt="FlyMe" class="img-fluid" style="width: 25rem;">
     </div>
   </header>
   <div class="row mx-1">
     <div class="col-md-7 px-5 mt-4">
-      <img src="../imgs/booking-flight.svg" alt="Booking flight girl" class="img-fluid">
+      <img src="/FlyMePHP/frontend/imgs/booking-flight.svg" alt="Booking flight girl" class="img-fluid">
     </div>
 
     <div class="col-md-5 px-5 mt-5">
@@ -43,7 +43,7 @@
             <button type="submit" class="botao-login btn btn-primary rounded-4 mt-5">Entrar</button>
         </div>
         <h6 class="text-center mt-5" style="font-size: 0.7rem;">Não tem uma conta? 
-          <a style="text-decoration: none; color: #3C5CAA;" href="../pages/cadastro.php">
+          <a style="text-decoration: none; color: #3C5CAA;" href="/FlyMePHP/frontend/pages/Usuario/formCadastro.php">
             <span class="fw-bold" onclick="fazerLogin()">Cadastre-se</span>
           </a>
         </h6>

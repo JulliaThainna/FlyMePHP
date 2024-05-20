@@ -1,5 +1,5 @@
 <?php
-    require '../../database/conectDatabase.php';
+    require '../../../database/conectDatabase.php';
     $cpf = $_POST["cpf"];
     $nome = $_POST["nome"];
     $email = $_POST["email"];
@@ -11,7 +11,10 @@
     
     $database->query($sql);
     if($database->affected_rows >= 1){
-        echo "deu bom";
+        return 0;
+    }
+    else{
+        return 1;
     }
 
     $database->close();

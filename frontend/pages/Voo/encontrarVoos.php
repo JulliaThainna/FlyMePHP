@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FlyMe - Home</title>
-    <link rel="icon" href="../imgs/icon.png">
+    <link rel="icon" href="/FlyMePHP/frontend/imgs/icon.png">
     <!--Bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
@@ -14,14 +14,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!--CSS-->
-    <link rel="stylesheet" href="../style/navbar.css">
-    <link rel="stylesheet" href="../style/home.css">
-    <link rel="stylesheet" href="../style/gerenciar_sistema.css">
+    <link rel="stylesheet" href="/FlyMePHP/frontend/style/navbar.css">
+    <link rel="stylesheet" href="/FlyMePHP/frontend/style/home.css">
+    <link rel="stylesheet" href="/FlyMePHP/frontend/style/gerenciar_sistema.css">
 </head>
 <body>
   <?php
-    include 'menu.php';
-    include 'formVoos.php';
+    include '../menu.php';
+    include './formVoos.php';
   ?>
 </body>
 </html>
