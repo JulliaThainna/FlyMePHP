@@ -12,7 +12,7 @@ CREATE TABLE usuario(
 CREATE TABLE companhia_aerea(
     id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(150) NOT NULL, 
-    cpnj VARCHAR(150) NOT NULL,
+    cnpj VARCHAR(150) NOT NULL,
     endereco VARCHAR(500) NOT NULL,
     telefone VARCHAR(20) NOT NULL
 );

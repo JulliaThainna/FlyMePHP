@@ -19,28 +19,28 @@
     <link rel="stylesheet" href="/FlyMePHP/frontend/style/gerenciar_sistema.css">
 </head>
 <body>
-  <?php include '../menu.php'; ?>
+  <?php include './menu.php'; ?>
   <div class="container mt-5" id="myTable">
       <ul class="nav nav-tabs px-2 pt-2" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
           <a class="nav-link active" id="tab1-tab" data-bs-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">Voos</a>
         </li>
         <li class="nav-item" role="presentation">
-          <a class="nav-link" id="tab2-tab" data-bs-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">Usuários</a>
+          <a class="nav-link" id="tab2-tab" data-bs-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">Companhias Aéreas</a>
         </li>
         <li class="nav-item" role="presentation">
-          <a class="nav-link" id="tab2-tab" data-bs-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">Companhias Aéreas</a>
+          <a class="nav-link" id="tab2-tab" data-bs-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">Usuários</a>
         </li>
       </ul>
       <div class="tab-content mt-3" id="myTabContent">
         <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
-          <?php include '../Voo/gerenciarVoos.php'; ?>
+          <?php include 'Voo/gerenciarVoos.php'; ?>
         </div>
         <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
-          <?php include '../Usuario/gerenciarUsuarios.php'; ?>
+          <?php include 'CompanhiaAerea/gerenciarCiaAerea.php'; ?>
         </div>
         <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
-          <?php include '../CompanhiaAerea/gerenciarCiaAerea.php'; ?>
+          <?php include 'Usuario/gerenciarUsuarios.php'; ?>
         </div>
       </div>
   </div>

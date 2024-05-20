@@ -1,0 +1,204 @@
+<!--Modal adicionar companhia aérea (Talvez alterar pra enviar arquivo JSON)-->
+<div class="modal fade" id="modal-adicionarCA" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Adicionar nova Companhia Aérea</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+            <form action="/FlyMePHP/frontend/pages/CompanhiaAerea/cadastrarCiaAerea.php" method="post">
+                <div class="mt-3">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" class="form-control rounded-5" name="nome" required>
+                </div>
+                <div class="mt-3">
+                    <label for="cnpj" class="form-label">CNPJ</label>
+                    <input type="text" class="form-control rounded-5" name="cnpj" required>
+                </div>
+                <div class="mt-3">
+                    <label for="endereco" class="form-label">Endereco</label>
+                    <input type="text" class="form-control rounded-5" name="endereco" required>
+                </div>
+                <div class="mt-3">
+                    <label for="telefone" class="form-label">Telefone</label>
+                    <input type="text" class="form-control rounded-5" name="telefone" required>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn botao-fechar" data-bs-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn">
+                    Adicionar companhia aérea
+                    </button>
+                </div>
+            </form>
+        </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal companhia aérea adicionada-->
+<div class="modal fade" id="modal-caAdicionado" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+            <h4>Companhia aérea adicionada com sucesso!</h4>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn botao-fechar" data-bs-dismiss="modal" onclick="location.reload()">Fechar</button>
+        </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal deletar todos as companhias aéreas-->
+<div class="modal fade" id="modal-deletarTodasCA" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Deletar todas as companhias aéreas</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+            <h5>Você tem certeza que deseja deletar TODAS as companhias aéreas?</h5>
+            <p class="text-center">Cuidado, essa ação é irreversível!</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn botao-fechar" data-bs-dismiss="modal">Fechar</button>
+            <button type="button" class="btn botao-danger">
+            Deletar todas as companhias aéreas
+            </button>
+        </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal companhias aéreas deletados-->
+<div class="modal fade" id="modal-caDeletados" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+            <h4>Todas as companhias aéreas foram deletadas com sucesso!</h4>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn botao-fechar" data-bs-dismiss="modal" onclick="location.reload();">Fechar</button>
+        </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal editar companhia aérea-->
+<div class="modal fade" id="modal-alterarCA" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Editar companhia aérea</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+            <form onsubmit = "return false;">
+            <div class="mt-3">
+                <label for="caModal" class="form-label">Companhia aérea</label>
+                <input type="text" class="form-control rounded-5" id="caModal" readonly>
+            </div>
+            <div class="mt-3">
+                <label for="origemModal" class="form-label">Origem</label>
+                <input type="text" class="form-control rounded-5" id="origemModal" disabled>
+            </div>
+            <div class="mt-3">
+                <label for="destinoModal" class="form-label">Destino</label>
+                <input type="text" class="form-control rounded-5" id="destinoModal" disabled>
+            </div>
+            <div class="mt-3">
+                <label for="data-horarioModal" class="form-label">Data/Horário</label>
+                <input type="datetime-local" value="2017-06-01T08:30" class="form-control rounded-5" id="data-horarioModal">
+            </div>
+            <div class="mt-3">
+                <label for="duracaoModal" class="form-label">Duração (em horas)</label>
+                <input type="number" class="form-control rounded-5" id="duracaoModal">
+            </div>
+            <div class="mt-3">
+                <label for="assentosModal" class="form-label">Assentos</label>
+                <input type="number" class="form-control rounded-5" id="assentosModal">
+            </div>
+            <div class="mt-3">
+                <label for="classeModal" class="form-label">Classe</label>
+                <input type="text" class="form-control rounded-5" id="classeModal" disabled>
+            </div>
+            <div class="mt-3">
+                <label for="valorModal" class="form-label">Valor</label>
+                <input type="text" class="form-control rounded-5" id="valorModal" disabled>
+            </div>
+            <p style="font-size: 0.7rem;" class="mt-5">Observação: Só é possível alterar a data/horário, duração e quantidade de assentos do voo.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn botao-fechar" data-bs-dismiss="modal">Fechar</button>
+                <button type="submit" class="btn" onclick="editarVoo();">
+                Editar voo
+                </button>
+            </form>
+        </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal companhia aérea alterado-->
+<div class="modal fade" id="modal-vooAlterado" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+            <h4>Companhia aérea alterada com sucesso!</h4>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn botao-fechar" data-bs-dismiss="modal" onclick="location.reload();">Fechar</button>
+        </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal deletar companhia aérea-->
+<div class="modal fade" id="modal-deletarCA" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Deletar companhia aérea</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+            <h5>Você tem certeza que deseja deletar essa companhia aérea?</h5>
+            <p class="text-center">Cuidado, essa ação é irreversível!</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn botao-fechar" data-bs-dismiss="modal">Fechar</button>
+            <button type="button" class="btn botao-danger">
+            Deletar companhia aérea
+            </button>
+        </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal companhia aérea deletada-->
+<div class="modal fade" id="modal-vooDeletado" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+            <h4>Companhia aérea deletada com sucesso!</h4>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn botao-fechar" data-bs-dismiss="modal" onclick="location.reload();">Fechar</button>
+        </div>
+        </div>
+    </div>
+</div>

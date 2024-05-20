@@ -11,10 +11,7 @@
     
     $database->query($sql);
     if($database->affected_rows >= 1){
-        return 0;
-    }
-    else{
-        return 1;
+        echo 'Usuário cadastrado com sucesso!';
     }
 
     $database->close();
