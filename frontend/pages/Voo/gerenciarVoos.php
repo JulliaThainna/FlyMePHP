@@ -20,7 +20,7 @@
         <thead>
         <tr>
             <th>Id</th>
-            <th>Companhia aérea</th>
+            <!-- <th>Companhia aérea</th> -->
             <th>Origem</th>
             <th>Destino</th>
             <th>Data/Horário</th>
@@ -44,7 +44,6 @@
                         $valor = $linha['valor'];
                         echo "<tr>
                             <th scope='row'> $id </th>
-                            <td>$id</td>
                             <td>$origem</td>
                             <td>$destino</td>
                             <td>$data_horario</td>
