@@ -10,6 +10,12 @@
         Deletar todos os voos
         </button>
     </div>
+    <?php 
+        require '../../database/conectDatabase.php';
+        $sql = "SELECT * FROM voo";
+        $resultado = mysqli_query($database, $sql);
+        $database->close();
+    ?>
     <table class="table" id="tabela-voos">
         <thead>
         <tr>
@@ -20,12 +26,35 @@
             <th>Data/Horário</th>
             <th>Duração (em horas)</th>
             <th>Assentos</th>
-            <th>Classe</th>
+            <!-- <th>Classe</th> -->
             <th>Valor</th>
             <th>Ações</th>
         </tr>
         </thead>
         <tbody>
+            <?php
+                if($resultado){
+                    while($linha = mysqli_fetch_assoc($resultado)){
+                        $id = $linha['id'];
+                        $origem = $linha['origem'];
+                        $destino = $linha['destino'];
+                        $data_horario = $linha['data_horario'];
+                        $duracao = $linha['duracao'];
+                        $assentos = $linha['assentos'];
+                        $valor = $linha['valor'];
+                        echo "<tr>
+                            <th scope='row'> $id </th>
+                            <td>$id</td>
+                            <td>$origem</td>
+                            <td>$destino</td>
+                            <td>$data_horario</td>
+                            <td>$duracao</td>
+                            <td>$assentos</td>
+                            <td>$valor</td>
+                        </tr>";
+                    }
+                }
+            ?>
         </tbody>
     </table>
     </div>

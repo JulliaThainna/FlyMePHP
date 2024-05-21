@@ -10,16 +10,42 @@
         Deletar todas as Companhias Aéreas
         </button>
     </div>
-    <table class="table" id="tabela-cAerea">
+    <?php 
+        require '../../database/conectDatabase.php';
+        $sql = "SELECT * FROM companhia_aerea";
+        $resultado = mysqli_query($database, $sql);
+        $database->close();
+    ?>
+    <table class="table" id="tabela-ca">
         <thead>
         <tr>
+            <th>Id</th>
             <th>Nome</th>
             <th>CNPJ</th>
             <th>Endereço</th>
             <th>Telefone</th>
+            <th>Ações</th>
         </tr>
         </thead>
         <tbody>
+        <?php
+            if($resultado){
+                while($linha = mysqli_fetch_assoc($resultado)){
+                    $id = $linha['id'];
+                    $nome = $linha['nome'];
+                    $cnpj = $linha['cnpj'];
+                    $endereco = $linha['endereco'];
+                    $telefone = $linha['telefone'];
+                    echo "<tr>
+                        <th scope='row'> $id </th>
+                        <td>$nome</td>
+                        <td>$cnpj</td>
+                        <td>$endereco</td>
+                        <td>$telefone</td>
+                    </tr>";
+                }
+            }
+        ?>
         </tbody>
     </table>
 </div>
