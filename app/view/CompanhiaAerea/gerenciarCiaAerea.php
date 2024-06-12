@@ -1,4 +1,4 @@
-<?php include 'modalsCiaAerea.html'; ?>
+<?php require 'modalsCiaAerea.html'; ?>
 <div class="tab-pane fade show active" id="tab2">
     <div class="container d-flex justify-content-end">
         <button type="button" class="btn m-3" data-bs-toggle="modal" data-bs-target="#modal-adicionarCA">
@@ -10,12 +10,6 @@
         Deletar todas as Companhias Aéreas
         </button>
     </div>
-    <?php 
-        require '../../database/conectDatabase.php';
-        $sql = "SELECT * FROM companhia_aerea";
-        $resultado = mysqli_query($database, $sql);
-        $database->close();
-    ?>
     <table class="table" id="tabela-ca">
         <thead>
         <tr>
@@ -28,24 +22,24 @@
         </tr>
         </thead>
         <tbody>
-        <?php
-            if($resultado){
-                while($linha = mysqli_fetch_assoc($resultado)){
-                    $id = $linha['id'];
-                    $nome = $linha['nome'];
-                    $cnpj = $linha['cnpj'];
-                    $endereco = $linha['endereco'];
-                    $telefone = $linha['telefone'];
-                    echo "<tr>
-                        <th scope='row'> $id </th>
-                        <td>$nome</td>
-                        <td>$cnpj</td>
-                        <td>$endereco</td>
-                        <td>$telefone</td>
-                    </tr>";
+            <!-- <?php
+                if($resultado){
+                    while($linha = mysqli_fetch_assoc($resultado)){
+                        $id = $linha['id'];
+                        $nome = $linha['nome'];
+                        $cnpj = $linha['cnpj'];
+                        $endereco = $linha['endereco'];
+                        $telefone = $linha['telefone'];
+                        echo "<tr>
+                            <th scope='row'> $id </th>
+                            <td>$nome</td>
+                            <td>$cnpj</td>
+                            <td>$endereco</td>
+                            <td>$telefone</td>
+                        </tr>";
+                    }
                 }
-            }
-        ?>
+            ?> -->
         </tbody>
     </table>
 </div>

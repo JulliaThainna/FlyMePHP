@@ -7,7 +7,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body">
-            <form action="/FlyMePHP/frontend/pages/CompanhiaAerea/cadastrarCiaAerea.php" method="post">
+            <form action="/FlyMePHP/app/controller/CompanhiaAerea.php" method="post">
                 <div class="mt-3">
                     <label for="nome" class="form-label">Nome</label>
                     <input type="text" class="form-control rounded-5" name="nome" required>
@@ -26,9 +26,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn botao-fechar" data-bs-dismiss="modal">Fechar</button>
-                    <button type="submit" class="btn">
-                    Adicionar companhia aérea
-                    </button>
+                    <button type="submit" class="btn" name="cadastrarCA">Adicionar companhia aérea</button>
                 </div>
             </form>
         </div>
