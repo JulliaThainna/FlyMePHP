@@ -1,7 +1,7 @@
 <?php 
 class CompanhiaAereaDAO{
 
-    public function create(CompanhiaAerea $ca){
+    public function create($ca){
         try {
             $sql = "INSERT INTO companhia_aerea (nome, cnpj, endereco, telefone) VALUES (:nome, :cnpj, :endereco, :telefone);";
             $con_sql = ConnectionFactory::getConnection()->prepare($sql);
@@ -37,9 +37,23 @@ class CompanhiaAereaDAO{
         }catch(Exception $exception){
             print("<p>Erro ao listar as Companhias Aéreas cadastradas: $exception <p/>");
         }
+    } 
+
+    public function update($ca){
+        try{
+            $sql = "UPDATE companhia_aerea SET nome = :nome, cnpj = :cnpj, endereco = :endereco, telefone = :telefone WHERE id = :id";
+            $con_sql = ConnectionFactory::getConnection()->prepare($sql);
+            $con_sql->bindValue(":nome", $ca->getNome());
+            $con_sql->bindValue(":cnpj", $ca->getCnpj());
+            $con_sql->bindValue(":endereco", $ca->getEndereco());
+            $con_sql->bindValue(":telefone", $ca->getTelefone());
+            return $con_sql->execute();
+        }catch(Exception $exception){
+            print("<p>Erro ao editar Companhia Aérea: $exception</p>");
+        }
     }
 
-    public function delete(CompanhiaAerea $ca){
+    public function delete($ca){
         try{
             $sql = "DELETE FROM companhia_aerea WHERE id = :id";
             $con_sql = ConnectionFactory::getConnection()->prepare($sql);

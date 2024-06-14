@@ -25,6 +25,19 @@ class CompanhiaAereaController{
         header("Location: ../view/gerenciarSistema.php#tab2");
     }
 
+    //UPDATE
+    public function update(){
+        $data = filter_input_array(INPUT_POST);
+        
+        $this->ca->setNome($data["nome"]);
+        $this->ca->setCnpj($data["cnpj"]);    
+        $this->ca->setEndereco($data["endereco"]);
+        $this->ca->setTelefone($data["telefone"]);
+    
+        $this->caDao->update($this->ca);
+        header("Location: ../view/gerenciarSistema.php#tab2");
+    }
+
     //SELECT *
     public function read(){
         return $this->caDao->read();
@@ -47,8 +60,13 @@ if(isset($_POST["cadastrarCA"])){
 }
 
 //Quando clicar no botão deletar
-if(isset($_GET["del"])){    
-    $ca->setId($_GET["del"]);
+if(isset($_GET["deletarCA"])){    
+    $ca->setId($_GET["deletarCA"]);
     $caController->delete($ca);
+}
+
+//Quando clicar em editar
+if(isset($_POST["editarCA"])){
+    $caController->update();
 }
 ?>

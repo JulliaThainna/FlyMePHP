@@ -1,6 +1,6 @@
 <?php 
     require '../controller/CompanhiaAereaController.php';
-    require 'modalsCiaAerea.html';
+    require 'modalsCiaAerea.php';
 
     $ca = new CompanhiaAereaController();
     $listCAs = $ca->read();
@@ -8,14 +8,14 @@
 
 <div class="tab-pane fade show active" id="tab2">
     <div class="container d-flex justify-content-end">
-        <button type="button" class="btn m-3" data-bs-toggle="modal" data-bs-target="#modal-adicionarCA">
-        <i class="bi bi-plus-lg" style="color: #ffffff;"></i>
-        Adicionar nova Companhia Aérea
+        <button type="button" class="btn m-3" data-bs-toggle="modal" data-bs-target="#modal-cadastrarCa">
+            <i class="bi bi-plus-lg" style="color: #ffffff;"></i>
+            Adicionar nova Companhia Aérea
         </button>
-        <button type="button" class="btn m-3 botao-danger" data-bs-toggle="modal" data-bs-target="#modal-deletarTodasCA">
+        <!-- <button type="button" class="btn m-3 botao-danger" data-bs-toggle="modal" data-bs-target="#modal-deletarTodasCA">
         <i class="bi bi-trash-fill" style="color: #ffffff;"></i>
         Deletar todas as Companhias Aéreas
-        </button>
+        </button> -->
     </div>
     <table class="table" id="tabela-ca">
         <thead>
@@ -37,9 +37,10 @@
                     <td><?= $ca->getEndereco() ?></td>
                     <td><?= $ca->getTelefone() ?></td>
                     <td>
-                        <a href="../controller/CompanhiaAereaController.php?del=<?= $ca->getId() ?>">
-                            <button class="btn btn-sm" type="button">Excluir</button>
-                        </a>
+                        <button type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#modal-editarCa">Editar</button>     
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#modal-deletarCa" onclick="document.getElementById('delete-id').value='<?= $ca->getId() ?>'">Deletar</button>
                     </td>
                 </tr>
             <?php endforeach ?>
