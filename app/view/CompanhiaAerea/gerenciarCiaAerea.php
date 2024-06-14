@@ -36,6 +36,11 @@
                     <td><?= $ca->getCnpj() ?></td>
                     <td><?= $ca->getEndereco() ?></td>
                     <td><?= $ca->getTelefone() ?></td>
+                    <td>
+                        <a href="../controller/CompanhiaAereaController.php?del=<?= $ca->getId() ?>">
+                            <button class="btn btn-sm" type="button">Excluir</button>
+                        </a>
+                    </td>
                 </tr>
             <?php endforeach ?>
         </tbody>

@@ -35,7 +35,18 @@ class CompanhiaAereaDAO{
             }
             return $listCAs;
         }catch(Exception $exception){
-            print("<p>Erro ao listar as Companhias Aéreas cadastradas $exception <p/>");
+            print("<p>Erro ao listar as Companhias Aéreas cadastradas: $exception <p/>");
+        }
+    }
+
+    public function delete(CompanhiaAerea $ca){
+        try{
+            $sql = "DELETE FROM companhia_aerea WHERE id = :id";
+            $con_sql = ConnectionFactory::getConnection()->prepare($sql);
+            $con_sql->bindValue(":id", $ca->getId());
+            return $con_sql->execute();
+        }catch(Exception $exception){
+            print("<p>Erro ao deletar Companhia Aérea: $exception </p>");
         }
     }
 }
