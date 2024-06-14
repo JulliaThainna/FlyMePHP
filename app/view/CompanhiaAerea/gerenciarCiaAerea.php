@@ -1,4 +1,11 @@
-<?php require 'modalsCiaAerea.html'; ?>
+<?php 
+    require '../controller/CompanhiaAereaController.php';
+    require 'modalsCiaAerea.html';
+
+    $ca = new CompanhiaAereaController();
+    $listCAs = $ca->read();
+?>
+
 <div class="tab-pane fade show active" id="tab2">
     <div class="container d-flex justify-content-end">
         <button type="button" class="btn m-3" data-bs-toggle="modal" data-bs-target="#modal-adicionarCA">
@@ -13,33 +20,24 @@
     <table class="table" id="tabela-ca">
         <thead>
         <tr>
-            <th>Id</th>
-            <th>Nome</th>
-            <th>CNPJ</th>
-            <th>Endereço</th>
-            <th>Telefone</th>
-            <th>Ações</th>
+            <th scope="col">Id</th>
+            <th scope="col">Nome</th>
+            <th scope="col">CNPJ</th>
+            <th scope="col">Endereço</th>
+            <th scope="col">Telefone</th>
+            <th scope="col">Ações</th>
         </tr>
         </thead>
         <tbody>
-            <!-- <?php
-                if($resultado){
-                    while($linha = mysqli_fetch_assoc($resultado)){
-                        $id = $linha['id'];
-                        $nome = $linha['nome'];
-                        $cnpj = $linha['cnpj'];
-                        $endereco = $linha['endereco'];
-                        $telefone = $linha['telefone'];
-                        echo "<tr>
-                            <th scope='row'> $id </th>
-                            <td>$nome</td>
-                            <td>$cnpj</td>
-                            <td>$endereco</td>
-                            <td>$telefone</td>
-                        </tr>";
-                    }
-                }
-            ?> -->
+            <?php foreach($ca->read() as $ca) : ?>
+                <tr>
+                    <td><?= $ca->getId() ?></td>
+                    <td><?= $ca->getNome() ?></td>
+                    <td><?= $ca->getCnpj() ?></td>
+                    <td><?= $ca->getEndereco() ?></td>
+                    <td><?= $ca->getTelefone() ?></td>
+                </tr>
+            <?php endforeach ?>
         </tbody>
     </table>
 </div>

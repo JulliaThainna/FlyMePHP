@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 <body>
-  <?php include '../../menu.php'; ?>
+  <?php include "../../menu.php"; ?>
   <div class="container mt-5" id="myTable">
       <ul class="nav nav-tabs px-2 pt-2" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
@@ -54,5 +54,4 @@ document.addEventListener("DOMContentLoaded", function() {
       </div>
   </div>
 </body>
-
 </html>
