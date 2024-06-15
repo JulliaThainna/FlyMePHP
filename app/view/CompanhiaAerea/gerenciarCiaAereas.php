@@ -1,6 +1,6 @@
 <?php 
-    require '../controller/CompanhiaAereaController.php';
-    require 'modalsCiaAerea.php';
+    require "../controller/CompanhiaAereaController.php";
+    require "modalsCiaAerea.php";
 
     $ca = new CompanhiaAereaController();
     $listCAs = $ca->read();
@@ -20,18 +20,17 @@
     <table class="table" id="tabela-ca">
         <thead>
         <tr>
-            <th scope="col">Id</th>
             <th scope="col">Nome</th>
-            <th scope="col">CNPJ</th>
+            <th scope="col">Cnpj</th>
             <th scope="col">Endereço</th>
             <th scope="col">Telefone</th>
-            <th scope="col">Ações</th>
+            <th scope="col" style="padding-left: 5%;">Ações</th>
+            <th scope="col"></th>
         </tr>
         </thead>
         <tbody>
             <?php foreach($ca->read() as $ca) : ?>
                 <tr>
-                    <td><?= $ca->getId() ?></td>
                     <td><?= $ca->getNome() ?></td>
                     <td><?= $ca->getCnpj() ?></td>
                     <td><?= $ca->getEndereco() ?></td>

@@ -10,10 +10,12 @@ class CompanhiaAereaDAO{
         try {
             $sql = "INSERT INTO companhia_aerea (nome, cnpj, endereco, telefone) VALUES (:nome, :cnpj, :endereco, :telefone);";
             $query = $this->conn->prepare($sql);
+
             $query->bindValue(":nome", $ca->getNome());
             $query->bindValue(":cnpj", $ca->getCnpj());
             $query->bindValue(":endereco", $ca->getEndereco());
             $query->bindValue(":telefone", $ca->getTelefone());
+
             return $query->execute();
         }catch(Exception $exception){
             print("<p>Erro ao cadastrar Companhia Aérea: $exception</p>");
@@ -54,6 +56,7 @@ class CompanhiaAereaDAO{
             $query->bindValue(":cnpj", $ca->getCnpj());
             $query->bindValue(":endereco", $ca->getEndereco());
             $query->bindValue(":telefone", $ca->getTelefone());
+            
             return $query->execute();
         }catch(Exception $exception){
             print("<p>Erro ao editar Companhia Aérea: $exception</p>");
