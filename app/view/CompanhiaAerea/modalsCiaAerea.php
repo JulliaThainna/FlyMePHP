@@ -7,22 +7,22 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body">
-            <form action="/FlyMePHP/app/controller/CompanhiaAereaController.php" method="post">
+            <form action="../controller/CompanhiaAereaController.php" method="post">
                 <div class="mt-3">
-                    <label for="nome" class="form-label">Nome</label>
-                    <input type="text" class="form-control rounded-5" name="nome" required>
+                    <label for="create-nome" class="form-label">Nome</label>
+                    <input type="text" class="form-control rounded-5" name="nome" id="create-nome" required>
                 </div>
                 <div class="mt-3">
-                    <label for="cnpj" class="form-label">CNPJ</label>
-                    <input type="text" class="form-control rounded-5" name="cnpj" required>
+                    <label for="create-cnpj" class="form-label">CNPJ</label>
+                    <input type="text" class="form-control rounded-5" name="cnpj" id="create-cnpj" required>
                 </div>
                 <div class="mt-3">
-                    <label for="endereco" class="form-label">Endereco</label>
-                    <input type="text" class="form-control rounded-5" name="endereco" required>
+                    <label for="create-endereco" class="form-label">Endereco</label>
+                    <input type="text" class="form-control rounded-5" name="endereco" id="create-endereco" required>
                 </div>
                 <div class="mt-3">
-                    <label for="telefone" class="form-label">Telefone</label>
-                    <input type="text" class="form-control rounded-5" name="telefone" required>
+                    <label for="create-telefone" class="form-label">Telefone</label>
+                    <input type="text" class="form-control rounded-5" name="telefone" id="create-telefone" required>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn botao-fechar" data-bs-dismiss="modal">Fechar</button>
@@ -34,61 +34,62 @@
     </div>
 </div>
 
-<!--Modal companhia aérea adicionada-->
-<div class="modal fade" id="modal-caAdicionada" tabindex="-1">
+<!--Modal companhia aérea cadastrada-->
+<!-- <div class="modal fade" id="modal-caCadastrada" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">
         <div class="modal-header">
             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body">
-            <h4>Companhia aérea adicionada com sucesso!</h4>
+            <h4>Companhia aérea cadastrada com sucesso!</h4>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn botao-fechar" data-bs-dismiss="modal" onclick="location.reload()">Fechar</button>
         </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <!--Modal editar companhia aérea-->
 <div class="modal fade" id="modal-editarCa" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title">Editar companhia aérea</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-            <form action="/FlyMePHP/app/controller/CompanhiaAereaController.php" method="post">
-                <div class="mt-3">
-                    <label for="nomeCa" class="form-label">Nome</label>
-                    <input type="text" class="form-control rounded-5" id="nomeCA">
-                </div>
-                <div class="mt-3">
-                    <label for="cnpjCa" class="form-label">Cnpj</label>
-                    <input type="text" class="form-control rounded-5" id="cnpjCa">
-                </div>
-                <div class="mt-3">
-                    <label for="enderecoCa" class="form-label">Endereço</label>
-                    <input type="text" class="form-control rounded-5" id="enderecoCA">
-                </div>
-                <div class="mt-3">
-                    <label for="telefoneCa" class="form-label">Telefone</label>
-                    <input type="text" class="form-control rounded-5" id="telefoneCa">
-                </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn botao-fechar" data-bs-dismiss="modal">Fechar</button>
-                    <button type="submit" class="btn" name="editarCA">Editar</button>
-                </div>
-            </form>
+            <div class="modal-header">
+                <h5 class="modal-title">Editar companhia aérea</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form action="../controller/CompanhiaAereaController.php" method="post">
+                    <input type="hidden" name="id" id="edit-id">    
+                    <div class="mt-3">
+                        <label for="edit-nome" class="form-label">Nome</label>
+                        <input type="text" class="form-control rounded-5" name="nome" id="edit-nome">
+                    </div>
+                    <div class="mt-3">
+                        <label for="edit-cnpj" class="form-label">Cnpj</label>
+                        <input type="text" class="form-control rounded-5" name="cnpj" id="edit-cnpj">
+                    </div>
+                    <div class="mt-3">
+                        <label for="edit-endereco" class="form-label">Endereço</label>
+                        <input type="text" class="form-control rounded-5" name="endereco" id="edit-endereco">
+                    </div>
+                    <div class="mt-3">
+                        <label for="edit-telefone" class="form-label">Telefone</label>
+                        <input type="text" class="form-control rounded-5" name="telefone" id="edit-telefone">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn botao-fechar" data-bs-dismiss="modal">Fechar</button>
+                        <button type="submit" class="btn" name="editarCA">Editar</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
 
 <!--Modal companhia aérea editada-->
-<div class="modal fade" id="modal-caEditada" tabindex="-1">
+<!-- <div class="modal fade" id="modal-caEditada" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">
         <div class="modal-header">
@@ -102,7 +103,7 @@
         </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <!--Modal deletar companhia aérea-->
 <div class="modal fade" id="modal-deletarCa" tabindex="-1">
@@ -128,7 +129,7 @@
 </div>
 
 <!--Modal companhia aérea deletada-->
-<div class="modal fade" id="modal-caDeletada" tabindex="-1">
+<!-- <div class="modal fade" id="modal-caDeletada" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">
         <div class="modal-header">
@@ -142,7 +143,7 @@
         </div>
         </div>
     </div>
-</div>
+</div> -->
 
 
 <!--Modal deletar todos as companhias aéreas-->

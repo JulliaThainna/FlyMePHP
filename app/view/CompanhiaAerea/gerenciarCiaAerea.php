@@ -37,7 +37,14 @@
                     <td><?= $ca->getEndereco() ?></td>
                     <td><?= $ca->getTelefone() ?></td>
                     <td>
-                        <button type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#modal-editarCa">Editar</button>     
+                        <button type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#modal-editarCa"
+                            onclick="document.getElementById('edit-id').value='<?= $ca->getId() ?>';
+                             document.getElementById('edit-nome').value='<?= $ca->getNome() ?>';
+                             document.getElementById('edit-cnpj').value='<?= $ca->getCnpj() ?>';
+                             document.getElementById('edit-endereco').value='<?= $ca->getEndereco() ?>';
+                             document.getElementById('edit-telefone').value='<?= $ca->getTelefone() ?>';">
+                                
+                            Editar</button>
                     </td>
                     <td>
                         <button type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#modal-deletarCa" onclick="document.getElementById('delete-id').value='<?= $ca->getId() ?>'">Deletar</button>
