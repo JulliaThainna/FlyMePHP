@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
           <a class="nav-link" id="tab2-tab" data-bs-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">Companhias Aéreas</a>
         </li>
         <li class="nav-item" role="presentation">
-          <a class="nav-link" id="tab2-tab" data-bs-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">Usuários</a>
+          <a class="nav-link" id="tab3-tab" data-bs-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">Usuários</a>
         </li>
       </ul>
       <div class="tab-content mt-3" id="myTabContent">
@@ -46,10 +46,10 @@ document.addEventListener("DOMContentLoaded", function() {
           <!-- <?php include 'Voo/gerenciarVoos.php'; ?> -->
         </div>
         <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
-          <?php include 'CompanhiaAerea/gerenciarCiaAereas.php'; ?>
+          <?php include "CompanhiaAerea/gerenciarCiaAereas.php"; ?>
         </div>
         <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
-          <?php include 'Usuario/gerenciarUsuarios.php'; ?>
+          <?php include "Usuario/gerenciarUsuarios.php"; ?>
         </div>
       </div>
   </div>

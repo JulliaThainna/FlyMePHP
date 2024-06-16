@@ -55,8 +55,8 @@
           <div class="col-md-6 mt-3">
             <label for="create-genero" class="form-label">Gênero</label>
               <select class="form-control rounded-5" name="genero" id="create-genero" required>
-                <option value="Masculino">Masculino</option>
                 <option value="Feminino">Feminino</option>
+                <option value="Masculino">Masculino</option>
                 <option value="Outro">Outro</option>
               </select>
           </div>

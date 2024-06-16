@@ -1,11 +1,10 @@
 <?php
-    require "../controller/UsuarioController.php";
     require "modalsUsuario.php";
+    require "../controller/UsuarioController.php";
 
-    $usuario = new UsuarioController();
-    $listUsuarios = $usuario->read();
+    $usuarioController = new UsuarioController();
+    $listUsuarios = $usuarioController->read();
 ?>
-
 <div class="tab-pane fade show active" id="tab3">
     <div class="container d-flex justify-content-end">
         <!-- <button type="button" class="btn m-3 botao-danger" data-bs-toggle="modal" data-bs-target="#modal-deletarTodosUsuarios">
@@ -27,7 +26,7 @@
         </tr>
         </thead>
         <tbody>
-        <?php foreach($usuario->read() as $usuario) : ?>
+        <?php foreach($listUsuarios as $usuario) : ?>
             <tr>
                 <td><?= $usuario->getNome() ?></td>
                 <td><?= $usuario->getCpf() ?></td>

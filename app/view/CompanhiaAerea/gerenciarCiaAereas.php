@@ -1,6 +1,6 @@
 <?php 
-    require "../controller/CompanhiaAereaController.php";
     require "modalsCiaAerea.php";
+    require "../controller/CompanhiaAereaController.php";
 
     $ca = new CompanhiaAereaController();
     $listCAs = $ca->read();
@@ -35,7 +35,7 @@
                     <td><?= $ca->getCnpj() ?></td>
                     <td><?= $ca->getEndereco() ?></td>
                     <td><?= $ca->getTelefone() ?></td>
-                    <td>
+                    <td class="px-3">
                         <button type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#modal-editarCa"
                             onclick="document.getElementById('edit-id').value='<?= $ca->getId() ?>';
                              document.getElementById('edit-nome').value='<?= $ca->getNome() ?>';
@@ -44,10 +44,9 @@
                              document.getElementById('edit-telefone').value='<?= $ca->getTelefone() ?>';">
                                 
                             Editar</button>
+                            <button type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#modal-deletarCa" onclick="document.getElementById('delete-id').value='<?= $ca->getId() ?>'">Deletar</button>
                     </td>
-                    <td>
-                        <button type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#modal-deletarCa" onclick="document.getElementById('delete-id').value='<?= $ca->getId() ?>'">Deletar</button>
-                    </td>
+      
                 </tr>
             <?php endforeach ?>
         </tbody>

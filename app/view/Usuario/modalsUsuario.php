@@ -48,8 +48,8 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn botao-fechar" data-bs-dismiss="modal">Fechar</button>
-            <form action="../controller/UsuarioController.php" method="get">
-                <input type="hidden" name="deletarUsuario" id="delete-cpf">
+            <form action="/FlyMePHP/app/controller/UsuarioController.php" method="post">
+                <input type="hidden" name="deletarUsuario" id="delete-cpf" value="<?= $usuario['cpf']; ?>">
                 <button type="submit" class="btn botao-danger">Deletar</button>
             </form>
         </div>
@@ -151,38 +151,38 @@
     <div class="modal-body">
         <form>
         <div class="mt-3">
-            <label for="nome" class="form-label">Nome</label>
-            <input type="text" class="form-control rounded-5" id="nome-modal">
+            <label for="edit-nome" class="form-label">Nome</label>
+            <input type="text" class="form-control rounded-5" name="nome" id="edit-nome">
         </div>
         <div class="mt-3">
-            <label for="cpf" class="form-label">CPF</label>
-            <input type="text" class="form-control rounded-5" id="cpf-modal" disabled>
+            <label for="edit-cpf" class="form-label">CPF</label>
+            <input type="text" class="form-control rounded-5" name="cpf" id="edit-cpf" disabled>
         </div>
         <div class="mt-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control rounded-5" id="email-modal">
+            <label for="edit-email" class="form-label">E-mail</label>
+            <input type="email" class="form-control rounded-5" name="email" id="edit-email">
         </div>
         <div class="mt-3">
-            <label for="senha" class="form-label">Senha</label>
-            <input type="password" class="form-control rounded-5" id="senha-modal">
+            <label for="edit-senha" class="form-label">Senha</label>
+            <input type="password" class="form-control rounded-5" name="senha" id="edit-senha">
         </div>
         <div class="row">
             <div class="col-md-6 mt-3">
-            <label for="data" class="form-label">Data de Nascimento</label>
-            <input type="date" class="form-control rounded-5" id="data-modal" disabled>
+            <label for="edit-data_nasc" class="form-label">Data de Nascimento</label>
+            <input type="date" class="form-control rounded-5" name="data_nasc" id="edit-data_nasc" disabled>
             </div>
             <div class="col-md-6 mt-3">
-            <label for="genero" class="form-label">Gênero</label>
-            <select class="form-control rounded-5" name="genero" id="genero-modal">
-                <option value="Masculino">Masculino</option>
+            <label for="edit-genero" class="form-label">Gênero</label>
+            <select class="form-control rounded-5" name="genero" id="edit-genero">
                 <option value="Feminino">Feminino</option>
+                <option value="Masculino">Masculino</option>
                 <option value="Outro">Outro</option>
             </select>
             </div>
         </div>
         <div class="mt-3">
-            <label for="tel" class="form-label">Telefone</label>
-            <input type="tel" class="form-control rounded-5" id="tel-modal">
+            <label for="edit-telefone" class="form-label">Telefone</label>
+            <input type="text" class="form-control rounded-5" name="telefone" id="edit-telefone">
         </div>
         </form>
     </div>

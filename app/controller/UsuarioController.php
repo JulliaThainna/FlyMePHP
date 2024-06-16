@@ -73,8 +73,8 @@ if(isset($_POST["cadastrarUsuario"])){
 }
 
 //Quando clicar no botão de deletar
-if(isset($_GET["deletarUsuario"])){
-    $usuario->setCpf($_GET["deletarUsuario"]);
+if(isset($_POST["deletarUsuario"])){
+    $usuario->setCpf($_POST["deletarUsuario"]);
     $usuarioController->delete($usuario);
 }
 

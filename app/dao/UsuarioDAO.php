@@ -85,6 +85,5 @@ class UsuarioDAO{
             print("<p>Erro ao fazer login: $exception</p>");
         }
     }
-    
 }
 ?>
