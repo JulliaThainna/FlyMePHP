@@ -37,13 +37,49 @@ class UsuarioController{
     public function read(){
         return $this->usuarioDAO->read();
     }
+
+    //DELETE
+    public function delete(Usuario $usuario){
+        $this->usuarioDAO->delete($usuario);
+        header("Location: ../view/gerenciarSistema.php#tab3");
+    }
+
+    //LOGIN (SELECT WHERE)
+    public function login(){
+        $data = filter_input_array(INPUT_POST);
+        $email = $data["email"];
+        $senha = $data["senha"];
+
+        $usuario = $this->usuarioDAO->verifyLogin($email, $senha);
+        if($usuario){
+            session_start();
+            $_SESSION["usuario"] = $usuario;
+            header("Location: ../view/Usuario/meuperfil.php");
+        }
+        else{
+            print("Erro ao realizar login");
+        }
+        exit();
+    }   
 }
 
 //Objetos
+$usuario = new Usuario();
 $usuarioController = new UsuarioController();
 
 //Quando clicar no botão de cadastrar
 if(isset($_POST["cadastrarUsuario"])){
     $usuarioController->create();
+}
+
+//Quando clicar no botão de deletar
+if(isset($_GET["deletarUsuario"])){
+    $usuario->setCpf($_GET["deletarUsuario"]);
+    $usuarioController->delete($usuario);
+}
+
+//Quando clicar no botão entrar
+if(isset($_POST["logarUsuario"])){
+    $usuarioController->login();
 }
 ?>

@@ -19,13 +19,13 @@
 </head>
 <body>
   <header>
-    <div class="container mt-4">
-      <img src="/FlyMePHP/public/imgs/logo-flyme.svg" alt="FlyMe" class="img-fluid" style="width: 25rem;">
+    <div class="container mt-3 mb-4">
+      <img src="/FlyMePHP/public/imgs/logo-flyme.svg" alt="FlyMe" class="logo-flyme mt-3">
     </div>
   </header>
   <div class="row mx-1">
     <div class="col-md-7 px-5 mt-4">
-      <img src="/FlyMePHP/public/imgs/booking-flight.svg" alt="Booking flight girl" class="img-fluid">
+      <img src="/FlyMePHP/public/imgs/booking-flight.svg" alt="Booking flight girl" class="girl-flyme">
     </div>
 
     <div class="col-md-5 px-5">

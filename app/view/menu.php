@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg">
-    <div class="container">
+    <div class="container pt-2">
         <a class="navbar-brand" href="/FlyMePHP/app/view/Voo/encontrarVoos.php">
             <img src="/FlyMePHP/public/imgs/logo-flyme.svg" alt="FlyMe">
         </a>
@@ -8,15 +8,15 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="/FlyMePHP/app/view/Voo/encontrarVoos.php">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/FlyMePHP/app/view/Reserva/minhasReservas.php">Minhas Reservas</a>
-            </li>
-            <li class="nav-item m-0">
-                <a class="nav-link" href="/FlyMePHP/app/view/Usuario/meuPerfil.php">Perfil</a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/FlyMePHP/app/view/Voo/encontrarVoos.php">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/FlyMePHP/app/view/Reserva/minhasReservas.php">Minhas Reservas</a>
+                </li>
+                <li class="nav-item m-0">
+                    <a class="nav-link" href="/FlyMePHP/app/view/Usuario/meuPerfil.php">Perfil</a>
+                </li>
             </ul>
         </div>
     </div>

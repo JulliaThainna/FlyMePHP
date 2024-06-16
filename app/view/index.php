@@ -19,30 +19,30 @@
 </head>
 <body>
   <header>
-    <div class="container mt-4">
-      <img src="/FlyMePHP/public/imgs/logo-flyme.svg" alt="FlyMe" class="img-fluid" style="width: 25rem;">
+    <div class="container mt-3 mb-4">
+      <img src="/FlyMePHP/public/imgs/logo-flyme.svg" alt="FlyMe" class="logo-flyme mt-3">
     </div>
   </header>
   <div class="row mx-1">
     <div class="col-md-7 px-5 mt-4">
-      <img src="/FlyMePHP/public/imgs/booking-flight.svg" alt="Booking flight girl" class="img-fluid">
+      <img src="/FlyMePHP/public/imgs/booking-flight.svg" alt="Booking flight girl" class="girl-flyme">
     </div>
 
     <div class="col-md-5 px-5 mt-5">
       <h1>FlyMe é o seu novo jeito de reservar passagens aéreas</h1>
-      <form>
+      <form action="../controller/UsuarioController.php" method="post">
         <div class="mb-3 mt-5">
-          <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control rounded-5" id="email">
+          <label for="login-email" class="form-label">Email</label>
+          <input type="email" class="form-control rounded-5" name="email" id="login-email">
         </div>
-        <div class="mb-3">
-          <label for="senha" class="form-label">Senha</label>
-          <input type="senha" class="form-control rounded-5" id="senha">
+        <div>
+          <label for="login-senha" class="form-label">Senha</label>
+          <input type="password" class="form-control rounded-5" name="senha" id="login-senha">
         </div>
         <div class="d-flex justify-content-center align-items-center">
-            <button type="submit" class="botao-login btn btn-primary rounded-4 mt-5">Entrar</button>
+            <button type="submit" class="botao-login btn btn-primary rounded-4 mt-5" name="logarUsuario" style="font-size: 1rem;">Entrar</button>
         </div>
-        <h6 class="text-center mt-5" style="font-size: 0.7rem;">Não tem uma conta? 
+        <h6 class="text-center mt-4" style="font-size: 0.9rem;">Não tem uma conta? 
           <a style="text-decoration: none; color: #3C5CAA;" href="/FlyMePHP/app/view/Usuario/formCadastro.php">
             <span class="fw-bold">Cadastre-se</span>
           </a>

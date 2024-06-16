@@ -22,7 +22,7 @@
             <th scope="col">Data de Nascimento</th>
             <th scope="col">Gênero</th>
             <th scope="col">Telefone</th>
-            <th scope="col" style="padding-left: 4%;">Ações</th>
+            <th scope="col">Ações</th>
             <th scope="col"></th>
         </tr>
         </thead>
@@ -36,17 +36,7 @@
                 <td><?= $usuario->getGenero() ?></td>
                 <td><?= $usuario->getTelefone() ?></td>
                 <td>
-                    <button type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#modal-editarCa"
-                        onclick="document.getElementById('edit-id').value='<?= $ca->getId() ?>';
-                            document.getElementById('edit-nome').value='<?= $ca->getNome() ?>';
-                            document.getElementById('edit-cnpj').value='<?= $ca->getCnpj() ?>';
-                            document.getElementById('edit-endereco').value='<?= $ca->getEndereco() ?>';
-                            document.getElementById('edit-telefone').value='<?= $ca->getTelefone() ?>';">
-                            
-                        Editar</button>
-                </td>
-                <td>
-                    <button type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#modal-deletarUsuario" onclick="document.getElementById('delete-id').value='<?= $usuario->getCpf() ?>'">Deletar</button>
+                    <button type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#modal-deletarUsuario" onclick="document.getElementById('delete-cpf').value='<?= $usuario->getCpf() ?>'">Deletar</button>
                 </td>
             </tr>
             <?php endforeach ?>
