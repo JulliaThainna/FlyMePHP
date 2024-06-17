@@ -3,7 +3,7 @@
     include_once "../controller/CompanhiaAereaController.php";
     include_once "../model/Voo.php";
 
-    $ca = new CompanhiaAereaController();
+    $caVoo = new CompanhiaAereaController();
     $vooController = new VooController();
     $voo = new Voo();
     $listCAs = $vooController->getAllCompanhiasAereas();
@@ -40,7 +40,7 @@
         <tbody>
             <?php foreach($listVoos as $voo) : ?>           
                 <tr>
-                    
+                    <td><?= $caVoo->getCaById($voo->getCompanhiaAereaId()) ?></td>
                     <td><?= $voo->getOrigem() ?></td>
                     <td><?= $voo->getDestino() ?></td>
                     <td><?= $voo->getDataHorario() ?></td>

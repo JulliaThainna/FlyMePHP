@@ -74,7 +74,6 @@ class CompanhiaAereaDAO{
             print("<p>Erro ao deletar Companhia Aérea: $exception </p>");
         }
     }
-
     
     public function getCaById($id){
         try{
