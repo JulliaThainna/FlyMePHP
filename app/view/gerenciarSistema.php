@@ -43,13 +43,13 @@ document.addEventListener("DOMContentLoaded", function() {
       </ul>
       <div class="tab-content mt-3" id="myTabContent">
         <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
-          <!-- <?php include 'Voo/gerenciarVoos.php'; ?> -->
+          <?php require_once 'Voo/gerenciarVoos.php'; ?>
         </div>
         <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
-          <?php include "CompanhiaAerea/gerenciarCiaAereas.php"; ?>
+          <?php require_once "CompanhiaAerea/gerenciarCiaAereas.php"; ?>
         </div>
         <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
-          <?php include "Usuario/gerenciarUsuarios.php"; ?>
+          <?php require_once "Usuario/gerenciarUsuarios.php"; ?>
         </div>
       </div>
   </div>

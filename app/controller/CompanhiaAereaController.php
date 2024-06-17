@@ -3,6 +3,7 @@ include_once "../dao/connectionFactory.php";
 include_once "../dao/CompanhiaAereaDAO.php";
 include_once "../model/CompanhiaAerea.php";
 
+
 class CompanhiaAereaController{
     private $caDao;
     private $ca;
@@ -48,6 +49,10 @@ class CompanhiaAereaController{
     public function delete(CompanhiaAerea $ca){
         $this->caDao->delete($ca);
         header("Location: ../view/gerenciarSistema.php#tab2");
+    }
+
+    public function getCaById($id){
+        return $this->caDao->getCaById($id);
     }
 }
 

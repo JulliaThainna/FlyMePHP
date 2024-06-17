@@ -68,9 +68,25 @@ class CompanhiaAereaDAO{
             $sql = "DELETE FROM companhia_aerea WHERE id = :id";
             $query = $this->conn->prepare($sql);
             $query->bindValue(":id", $ca->getId());
+
             return $query->execute();
         }catch(Exception $exception){
             print("<p>Erro ao deletar Companhia Aérea: $exception </p>");
+        }
+    }
+
+    
+    public function getCaById($id){
+        try{
+            $sql = "SELECT nome FROM companhia_aerea WHERE id = :id";
+            $query = $this->conn->prepare($sql);
+            $query->bindValue(":id", $id);
+            $query->execute();
+            $result = $query->fetch(PDO::FETCH_ASSOC);
+            
+            return $result["nome"];
+        }catch(Exception $exception){
+            print("<p>Erro ao encontrar Companhia Aérea: $exception</p>");
         }
     }
 }

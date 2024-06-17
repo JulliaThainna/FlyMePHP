@@ -1,6 +1,15 @@
-<?php 
+<?php
+    include_once "../controller/VooController.php";
+    include_once "../controller/CompanhiaAereaController.php";
+    include_once "../model/Voo.php";
+
+    $ca = new CompanhiaAereaController();
+    $vooController = new VooController();
+    $voo = new Voo();
+    $listCAs = $vooController->getAllCompanhiasAereas();
+    $listVoos = $vooController->read();
+    
     require "modalsVoo.php"; 
-    require "../controller/VooController.php";
 ?>
 
 <div class="tab-pane fade show active" id="tab1">
@@ -28,29 +37,25 @@
             <!-- <th>Classe</th> -->    
         </tr>
         </thead>
-        <!-- <tbody>
-            <?php
-                if($resultado){
-                    while($linha = mysqli_fetch_assoc($resultado)){
-                        $id = $linha['id'];
-                        $origem = $linha['origem'];
-                        $destino = $linha['destino'];
-                        $data_horario = $linha['data_horario'];
-                        $duracao = $linha['duracao'];
-                        $assentos = $linha['assentos'];
-                        $valor = $linha['valor'];
-                        echo "<tr>
-                            <th scope='row'> $id </th>
-                            <td>$origem</td>
-                            <td>$destino</td>
-                            <td>$data_horario</td>
-                            <td>$duracao</td>
-                            <td>$assentos</td>
-                            <td>$valor</td>
-                        </tr>";
-                    }
-                }
-            ?>
-        </tbody> -->
+        <tbody>
+            <?php foreach($listVoos as $voo) : ?>           
+                <tr>
+                    
+                    <td><?= $voo->getOrigem() ?></td>
+                    <td><?= $voo->getDestino() ?></td>
+                    <td><?= $voo->getDataHorario() ?></td>
+                    <td><?= $voo->getDuracao() ?></td>
+                    <td><?= $voo->getAssentos() ?></td>
+                    <td><?= $voo->getValor() ?></td>
+       
+                    <td class="px-3">
+                        <button type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#modal-editarVoo">   
+                            Editar
+                        </button>
+                        <button type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#modal-deletarVoo">Deletar</button>
+                    </td>
+                </tr>
+            <?php endforeach ?>
+        </tbody> 
     </table>
     </div>

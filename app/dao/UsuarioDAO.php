@@ -51,7 +51,7 @@ class UsuarioDAO{
 
             return $listUsuarios;
         }catch(Exception $exception){
-            print("<p>Erro ao listar Usuários: $exception</p>");
+            print("<p>Erro ao listar Usuários cadastrados: $exception</p>");
         }
     }
 

@@ -4,11 +4,11 @@ include_once "../dao/VooDAO.php";
 include_once "../model/Voo.php";
 
 class VooController{
-    private $vooDao;
+    private $vooDAO;
     private $voo;
 
     public function __construct() {
-        $this->vooDao = new VooDAO();
+        $this->vooDAO = new VooDAO();
         $this->voo = new Voo();
     }
 
@@ -23,12 +23,29 @@ class VooController{
         $this->voo->setDuracao($data["duracao"]);
         $this->voo->setAssentos($data["assentos"]);
         $this->voo->setValor($data["valor"]);
+
+        if($this->vooDAO->create($this->voo)){
+            header("Location: ../view/gerenciarSistema.php");
+            exit();
+        }
+        else{
+            print("Erro ao realizar cadastro");
+        }
+    }
+
+    public function read(){
+        return $this->vooDAO->read();
+    }
+
+    public function getAllCompanhiasAereas(){
+        return $this->vooDAO->getAllCompanhiasAereas();
     }
 }
 
 //Objetos
 $voo = new Voo();
 $vooController = new VooController();
+$cas = $vooController->getAllCompanhiasAereas();
 
 //Se clicar no botão de cadastrar
 if(isset($_POST["cadastrarVoo"])){

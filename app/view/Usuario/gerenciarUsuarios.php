@@ -1,6 +1,6 @@
 <?php
-    require "modalsUsuario.php";
-    require "../controller/UsuarioController.php";
+    include_once "modalsUsuario.php";
+    include_once "../controller/UsuarioController.php";
 
     $usuarioController = new UsuarioController();
     $listUsuarios = $usuarioController->read();

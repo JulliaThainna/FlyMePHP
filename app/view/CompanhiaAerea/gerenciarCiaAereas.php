@@ -1,6 +1,6 @@
 <?php 
-    require "modalsCiaAerea.php";
-    require "../controller/CompanhiaAereaController.php";
+    include_once "modalsCiaAerea.php";
+    include_once "../controller/CompanhiaAereaController.php";
 
     $ca = new CompanhiaAereaController();
     $listCAs = $ca->read();
@@ -43,8 +43,9 @@
                              document.getElementById('edit-endereco').value='<?= $ca->getEndereco() ?>';
                              document.getElementById('edit-telefone').value='<?= $ca->getTelefone() ?>';">
                                 
-                            Editar</button>
-                            <button type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#modal-deletarCa" onclick="document.getElementById('delete-id').value='<?= $ca->getId() ?>'">Deletar</button>
+                                Editar
+                        </button>
+                        <button type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#modal-deletarCa" onclick="document.getElementById('delete-id').value='<?= $ca->getId() ?>'">Deletar</button>
                     </td>
       
                 </tr>

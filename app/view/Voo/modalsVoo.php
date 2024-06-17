@@ -7,19 +7,15 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
-                <form action="../../controller/VooController.php" method="post">
-                    <!-- <div class="mt-3">
+                <form action="../controller/VooController.php" method="post">
+                    <div class="mt-3">
                         <label for="companhia-aerea" class="form-label">Companhia aérea</label>
                         <select name="companhia-aerea-id" class="form-control rounded-5" required>
-                            <?php
-                                //$listCAs = $ca->getC();
-
-                                //foreach ($listCAs as $ca) {
-                                  //  echo "<option value='{$ca['id']}'>{$ca['nome']}</option>";
-                                //}
-                            ?>
+                            <?php foreach ($listCAs as $ca): ?>
+                                <option value="<?= $ca['id'] ?>"><?= $ca['nome']?></option>
+                            <?php endforeach; ?>
                         </select>
-                    </div> -->
+                    </div>
                     <div class="mt-3">
                         <label for="origem" class="form-label">Origem</label>
                         <input type="text" class="form-control rounded-5" name="origem" required>
@@ -30,7 +26,7 @@
                     </div>
                     <div class="mt-3">
                         <label for="data-horario" class="form-label">Data/Horário</label>
-                        <input type="datetime-local" class="form-control rounded-5" name="datahora" required>
+                        <input type="datetime-local" class="form-control rounded-5" name="data_horario" required>
                     </div>
                     <div class="mt-3">
                         <label for="duracao" class="form-label">Duração (em horas)</label>
