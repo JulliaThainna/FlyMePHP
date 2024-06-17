@@ -50,7 +50,10 @@ class UsuarioController{
         $this->usuario->setGenero($data["genero"]);
         $this->usuario->setDataNasc($data["data_nasc"]);
 
-        $this->usuarioDAO->update($this->usuario);
+        if($this->usuarioDAO->update($this->usuario)){
+            $_SESSION['usuario'] = $this->usuarioDAO->verifyLogin($data["email"], $data["senha"]);
+        }
+
         header("Location: ../view/Usuario/meuPerfil.php");
         exit(); 
     }
@@ -87,6 +90,7 @@ class UsuarioController{
         }
         exit();
     }   
+    
 }
 
 //Objetos

@@ -60,10 +60,13 @@ class UsuarioDAO{
             $sql = "UPDATE usuario SET cpf = :cpf, nome = :nome, email = :email, senha = :senha, telefone = :telefone, genero = :genero, data_nasc = :data_nasc WHERE cpf = :cpf";
             $query = $this->conn->prepare($sql);
             
+            //Fazer hash na senha para segurança
+            $hashedSenha = password_hash($usuario->getSenha(), PASSWORD_DEFAULT);
+
             $query->bindValue(":cpf", $usuario->getCpf());
             $query->bindValue(":nome", $usuario->getNome());
             $query->bindValue(":email", $usuario->getEmail());
-            $query->bindValue(":senha", $usuario->getSenha());
+            $query->bindValue(":senha", $hashedSenha);
             $query->bindValue(":telefone", $usuario->getTelefone());
             $query->bindValue(":genero", $usuario->getGenero());
             $query->bindValue(":data_nasc", $usuario->getDataNasc());

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FlyMe - Home</title>
-    <link rel="icon" href="/FlyMePHP/frontend/imgs/icon.png">
+    <link rel="icon" href="/FlyMePHP/public/imgs/icon.png">
     <!--Bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
@@ -14,9 +14,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!--CSS-->
-    <link rel="stylesheet" href="/FlyMePHP/frontend/style/navbar.css">
-    <link rel="stylesheet" href="/FlyMePHP/frontend/style/home.css">
-    <link rel="stylesheet" href="/FlyMePHP/frontend/style/gerenciar_sistema.css">
+    <link rel="stylesheet" href="/FlyMePHP/public/style/navbar.css">
+    <link rel="stylesheet" href="/FlyMePHP/public/style/home.css">
+    <link rel="stylesheet" href="/FlyMePHP/public/style/gerenciar_sistema.css">
 </head>
 <body>
   <?php include '../menu.php'; ?>
@@ -26,34 +26,34 @@
         <form action="">   
             <div class="container mb-5" id="bg-pesquisa-sub">
                 <div class="row">
-                    <form action="resultadoPesquisaVoos.php" method="post">
+                    <form>
                         <div class="col-md-6">
-                            <img src="../imgs/origem.svg" alt="" style="width: 1.2rem;">
+                            <img src="../../../public/imgs/origem.svg" alt="" style="width: 1.2rem;">
                             <label for="origem" class="form-label">Origem</label>
                             <input type="text" class="form-control" name="origem" required>
                         </div>
                         <div class="col-md-6">
-                            <img src="../imgs/destino.svg" alt="" style="width: 1.2rem;">
+                            <img src="../../../public/imgs/destino.svg" alt="" style="width: 1.2rem;">
                             <label for="destino" class="form-label">Destino</label>
                             <input type="text" class="form-control" name="destino" required>
                         </div>
                         <div class="col-md-6 pt-4">
-                            <img src="../imgs/ida.svg" alt="" style="width: 1.2rem;">
+                            <img src="../../../public/imgs/ida.svg" alt="" style="width: 1.2rem;">
                             <label for="data-ida" class="form-label">Ida</label>
                             <input type="date" class="form-control" name="data-ida" required>
                         </div>
                         <div class="col-md-6 pt-4">
-                            <img src="../imgs/volta.svg" alt="" style="width: 1.2rem;">
+                            <img src="../../../public/imgs/volta.svg" alt="" style="width: 1.2rem;">
                             <label for="data-volta" class="form-label">Volta</label>
                             <input type="date" class="form-control" name="data-volta">
                         </div>
                         <div class="row pt-4">
                             <div class="col-md-4"></div>
-                            <div class="col-md-4">
-                                <img src="../imgs/passageiros.svg" alt="" style="width: 1.2rem;">
-                                <label for="qtd-passageiros" class="form-label">Quantidade de passageiros</label>
-                                <input type="number" class="form-control" name="qtd-passageiros" required min="1">
-                            </div>
+                                <div class="col-md-4">
+                                    <img src="../../../public/imgs/passageiros.svg" alt="" style="width: 1.2rem;">
+                                    <label for="qtd-passageiros" class="form-label">Quantidade de passageiros</label>
+                                    <input type="number" class="form-control" name="qtd-passageiros" required min="1">
+                                </div>
                             <div class="col-md-4"></div>
                         </div>
                         <div class="container d-flex justify-content-end">

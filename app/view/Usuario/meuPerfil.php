@@ -21,8 +21,8 @@
     <body>
       <?php
         //Ver o usuário que está logado / se tem algum usuário logado
-        session_reset();
         session_start();
+        
         if(!isset($_SESSION["usuario"])){
           header("Location: ../index.php");
           exit();
