@@ -21,6 +21,7 @@
     <body>
       <?php
         //Ver o usuário que está logado / se tem algum usuário logado
+        session_reset();
         session_start();
         if(!isset($_SESSION["usuario"])){
           header("Location: ../index.php");
@@ -63,12 +64,21 @@
           </div>
           <div class="row mt-5 d-flex align-items-center justify-content-center">
             <div class="col-md-4 m-1">
-              <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modal-editarPerfil">
+              <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modal-editarConta" 
+                onclick="
+                document.getElementById('edit-nome').value='<?= $usuario['nome'] ?>';
+                document.getElementById('edit-cpf').value='<?= $usuario['cpf'] ?>';
+                document.getElementById('edit-email').value='<?= $usuario['email'] ?>';
+                document.getElementById('edit-senha').value='<?= $usuario['senha'] ?>';
+                document.getElementById('edit-data_nasc').value='<?= $usuario['data_nasc'] ?>';
+                document.getElementById('edit-genero').value='<?= $usuario['genero'] ?>';
+                document.getElementById('edit-telefone').value='<?= $usuario['telefone'] ?>';
+              ">
                 Editar informações
               </button>
             </div> 
             <div class="col-md-4 m-1">
-              <button type="button" class="btn botao-danger" data-bs-toggle="modal" data-bs-target="#modal-deletarUsuario">
+              <button type="button" class="btn botao-danger" data-bs-toggle="modal" data-bs-target="#modal-deletarConta">
                 Deletar conta
               </button>
             </div>

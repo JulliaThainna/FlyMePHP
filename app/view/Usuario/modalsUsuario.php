@@ -57,6 +57,29 @@
     </div>
 </div>
 
+<!--Modal deletar conta-->
+<div class="modal fade" id="modal-deletarConta" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Excluir conta</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+            <h5>Você tem certeza que deseja excluir sua conta?</h5>
+            <p class="text-center">Cuidado, essa ação é irreversível!</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn botao-fechar" data-bs-dismiss="modal">Fechar</button>
+            <form action="/FlyMePHP/app/controller/UsuarioController.php" method="post">
+                <input type="hidden" name="deletarConta" id="delete-cpf" value="<?= $usuario['cpf']; ?>">
+                <button type="submit" class="btn botao-danger">Deletar</button>
+            </form>
+        </div>
+        </div>
+    </div>
+</div>
+
 <!--Modal usuário deletado-->
 <!-- <div class="modal fade" id="modal-usuarioDeletado" tabindex="-1">
     <div class="modal-dialog">
@@ -141,58 +164,66 @@
 </div>
 
 <!--Modal editar perfil-->
-<div class="modal fade" id="modal-editarPerfil" tabindex="-1">
+<div class="modal fade" id="modal-editarConta" tabindex="-1">
 <div class="modal-dialog">
     <div class="modal-content">
-    <div class="modal-header">
-        <h5 class="modal-title">Editar informações da conta</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        <div class="modal-header">
+            <h5 class="modal-title">Editar informações da conta</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+            <form id="edit-form" action="../../controller/UsuarioController.php" method="post">
+                <div class="mt-3">
+                    <label for="edit-nome" class="form-label">Nome</label>
+                    <input type="text" class="form-control rounded-5" name="nome" id="edit-nome">
+                </div>
+                <div class="mt-3">
+                    <label for="edit-cpf" class="form-label">CPF</label>
+                    <input type="text" class="form-control rounded-5" name="cpf" id="edit-cpf" disabled>
+                </div>
+                <div class="mt-3">
+                    <label for="edit-email" class="form-label">E-mail</label>
+                    <input type="email" class="form-control rounded-5" name="email" id="edit-email">
+                </div>
+                <div class="mt-3">
+                    <label for="edit-senha" class="form-label">Senha</label>
+                    <input type="password" class="form-control rounded-5" name="senha" id="edit-senha">
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mt-3">
+                        <label for="edit-data_nasc" class="form-label">Data de Nascimento</label>
+                        <input type="date" class="form-control rounded-5" name="data_nasc" id="edit-data_nasc" disabled>
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <label for="edit-genero" class="form-label">Gênero</label>
+                        <select class="form-control" id="edit-genero" name="genero">
+                            <option value="feminino" <?php if ($usuario["genero"] == "feminino") echo "selected"; ?>>Feminino</option>
+                            <option value="masculino" <?php if ($usuario["genero"] == "masculino") echo "selected"; ?>>Masculino</option>
+                            <option value="outro" <?php if ($usuario["genero"] == "outro") echo "selected"; ?>>Outro</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <label for="edit-telefone" class="form-label">Telefone</label>
+                    <input type="text" class="form-control rounded-5" name="telefone" id="edit-telefone">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn botao-fechar" data-bs-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn" name="editarConta">
+                        Salvar alterações
+                    </button>
+                </div>
+                <script>
+        document.getElementById('edit-form').addEventListener('submit', function() {
+            // Habilitar temporariamente os campos desabilitados
+            document.getElementById('edit-cpf').disabled = false;
+            document.getElementById('edit-data_nasc').disabled = false;
+        });
+    </script>
+            </form>
+        </div>
     </div>
-    <div class="modal-body">
-        <form>
-        <div class="mt-3">
-            <label for="edit-nome" class="form-label">Nome</label>
-            <input type="text" class="form-control rounded-5" name="nome" id="edit-nome">
-        </div>
-        <div class="mt-3">
-            <label for="edit-cpf" class="form-label">CPF</label>
-            <input type="text" class="form-control rounded-5" name="cpf" id="edit-cpf" disabled>
-        </div>
-        <div class="mt-3">
-            <label for="edit-email" class="form-label">E-mail</label>
-            <input type="email" class="form-control rounded-5" name="email" id="edit-email">
-        </div>
-        <div class="mt-3">
-            <label for="edit-senha" class="form-label">Senha</label>
-            <input type="password" class="form-control rounded-5" name="senha" id="edit-senha">
-        </div>
-        <div class="row">
-            <div class="col-md-6 mt-3">
-            <label for="edit-data_nasc" class="form-label">Data de Nascimento</label>
-            <input type="date" class="form-control rounded-5" name="data_nasc" id="edit-data_nasc" disabled>
-            </div>
-            <div class="col-md-6 mt-3">
-            <label for="edit-genero" class="form-label">Gênero</label>
-            <select class="form-control rounded-5" name="genero" id="edit-genero">
-                <option value="Feminino">Feminino</option>
-                <option value="Masculino">Masculino</option>
-                <option value="Outro">Outro</option>
-            </select>
-            </div>
-        </div>
-        <div class="mt-3">
-            <label for="edit-telefone" class="form-label">Telefone</label>
-            <input type="text" class="form-control rounded-5" name="telefone" id="edit-telefone">
-        </div>
-        </form>
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn botao-fechar" data-bs-dismiss="modal">Fechar</button>
-        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modal-perfilAlterado">
-        Salvar alterações
-        </button>
-    </div>
-    </div>
+
 </div>
 </div>
 

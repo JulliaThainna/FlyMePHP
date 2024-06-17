@@ -40,7 +40,7 @@
           <input type="text" class="form-control rounded-5" name="cpf" id="create-cpf" required>
         </div>
         <div class="mt-3">
-          <label for="create-email" class="form-label">Email</label>
+          <label for="create-email" class="form-label">E-mail</label>
           <input type="email" class="form-control rounded-5" name="email" id="create-email" required>
         </div>
         <div class="mt-3">

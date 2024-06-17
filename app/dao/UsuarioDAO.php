@@ -51,7 +51,26 @@ class UsuarioDAO{
 
             return $listUsuarios;
         }catch(Exception $exception){
-            print("<p>Erro ao listar Usários: $exception</p>");
+            print("<p>Erro ao listar Usuários: $exception</p>");
+        }
+    }
+
+    public function update(Usuario $usuario){
+        try{
+            $sql = "UPDATE usuario SET cpf = :cpf, nome = :nome, email = :email, senha = :senha, telefone = :telefone, genero = :genero, data_nasc = :data_nasc WHERE cpf = :cpf";
+            $query = $this->conn->prepare($sql);
+            
+            $query->bindValue(":cpf", $usuario->getCpf());
+            $query->bindValue(":nome", $usuario->getNome());
+            $query->bindValue(":email", $usuario->getEmail());
+            $query->bindValue(":senha", $usuario->getSenha());
+            $query->bindValue(":telefone", $usuario->getTelefone());
+            $query->bindValue(":genero", $usuario->getGenero());
+            $query->bindValue(":data_nasc", $usuario->getDataNasc());
+
+            return $query->execute();
+        }catch(Exception $exception){
+            print("<p>Erro ao editar Usuário: $exception</p>");
         }
     }
 

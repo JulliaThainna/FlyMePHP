@@ -29,7 +29,7 @@
         </tr>
         </thead>
         <tbody>
-            <?php foreach($ca->read() as $ca) : ?>
+            <?php foreach($listCAs as $ca) : ?>
                 <tr>
                     <td><?= $ca->getNome() ?></td>
                     <td><?= $ca->getCnpj() ?></td>
