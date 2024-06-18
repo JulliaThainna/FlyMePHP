@@ -35,7 +35,7 @@
                 <td><?= $usuario->getGenero() ?></td>
                 <td><?= $usuario->getTelefone() ?></td>
                 <td>
-                    <button type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#modal-deletarUsuario" onclick="document.getElementById('delete-cpf').value='<?= $usuario->getCpf() ?>'">Deletar</button>
+                    <button type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#modal-deletarUsuario" onclick="document.getElementById('delete-usuario-cpf').value='<?= $usuario->getCpf() ?>'">Deletar</button>
                 </td>
             </tr>
             <?php endforeach ?>

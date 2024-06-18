@@ -53,6 +53,18 @@ class VooDAO{
         }
     }
 
+    public function delete(Voo $voo){
+        try{
+            $sql = "DELETE FROM voo WHERE id = :id";
+            $query = $this->conn->prepare($sql);
+            $query->bindValue(":id", $voo->getId());
+
+            return $query->execute();
+        }catch(Exception $exception){
+            print("Erro ao deletar Voo: $exception");
+        }
+    }
+
     public function getAllCompanhiasAereas(){
         try{
             $sql = "SELECT id, nome FROM companhia_aerea";

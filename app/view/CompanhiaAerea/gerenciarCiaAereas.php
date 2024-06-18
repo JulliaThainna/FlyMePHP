@@ -45,9 +45,8 @@
                                 
                                 Editar
                         </button>
-                        <button type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#modal-deletarCa" onclick="document.getElementById('delete-id').value='<?= $ca->getId() ?>'">Deletar</button>
+                        <button type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#modal-deletarCa" onclick="document.getElementById('delete-id-ca').value='<?= $ca->getId() ?>'">Deletar</button>
                     </td>
-      
                 </tr>
             <?php endforeach ?>
         </tbody>

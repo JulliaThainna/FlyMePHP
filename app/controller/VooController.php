@@ -37,6 +37,11 @@ class VooController{
         return $this->vooDAO->read();
     }
 
+    public function delete(Voo $voo){
+        $this->vooDAO->delete($voo);
+        header("Location: ../view/gerenciarSistema.php#tab1");
+    }
+
     public function getAllCompanhiasAereas(){
         return $this->vooDAO->getAllCompanhiasAereas();
     }
@@ -45,10 +50,15 @@ class VooController{
 //Objetos
 $voo = new Voo();
 $vooController = new VooController();
-$cas = $vooController->getAllCompanhiasAereas();
 
 //Se clicar no botão de cadastrar
 if(isset($_POST["cadastrarVoo"])){
     $vooController->create();
+}
+
+//Quando clicar no botão deletar
+if(isset($_POST["deletarVoo"])){    
+    $voo->setId($_POST["deletarVoo"]);
+    $vooController->delete($voo);
 }
 ?>

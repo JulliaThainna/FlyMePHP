@@ -52,7 +52,7 @@
                         <button type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#modal-editarVoo">   
                             Editar
                         </button>
-                        <button type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#modal-deletarVoo">Deletar</button>
+                        <button type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#modal-deletarVoo" onclick="document.getElementById('delete-id-voo').value='<?= $voo->getId() ?>'">Deletar</button>
                     </td>
                 </tr>
             <?php endforeach ?>

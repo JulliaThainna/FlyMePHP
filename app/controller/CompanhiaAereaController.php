@@ -71,8 +71,8 @@ if(isset($_POST["editarCA"])){
 }
 
 //Quando clicar no botão deletar
-if(isset($_GET["deletarCA"])){    
-    $ca->setId($_GET["deletarCA"]);
+if(isset($_POST["deletarCA"])){    
+    $ca->setId($_POST["deletarCA"]);
     $caController->delete($ca);
 }
 ?>

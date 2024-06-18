@@ -49,7 +49,7 @@
         <div class="modal-footer">
             <button type="button" class="btn botao-fechar" data-bs-dismiss="modal">Fechar</button>
             <form action="/FlyMePHP/app/controller/UsuarioController.php" method="post">
-                <input type="hidden" name="deletarUsuario" id="delete-cpf" value="<?= $usuario['cpf']; ?>">
+                <input type="hidden" name="deletarUsuario" id="delete-usuario-cpf" value="<?= $usuario['cpf']; ?>">
                 <button type="submit" class="btn botao-danger">Deletar</button>
             </form>
         </div>
@@ -72,7 +72,7 @@
         <div class="modal-footer">
             <button type="button" class="btn botao-fechar" data-bs-dismiss="modal">Fechar</button>
             <form action="/FlyMePHP/app/controller/UsuarioController.php" method="post">
-                <input type="hidden" name="deletarConta" id="delete-cpf" value="<?= $usuario['cpf']; ?>">
+                <input type="hidden" name="deletarConta" id="delete-conta-cpf" value="<?= $usuario['cpf']; ?>">
                 <button type="submit" class="btn botao-danger">Deletar</button>
             </form>
         </div>

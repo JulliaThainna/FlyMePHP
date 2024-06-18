@@ -119,8 +119,8 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn botao-fechar" data-bs-dismiss="modal">Fechar</button>
-            <form action="../controller/CompanhiaAereaController.php" method="get">
-                <input type="hidden" name="deletarCA" id="delete-id">
+            <form action="../controller/CompanhiaAereaController.php" method="post">
+                <input type="hidden" name="deletarCA" id="delete-id-ca">
                 <button type="submit" class="btn botao-danger">Deletar</button>
             </form>
         </div>
