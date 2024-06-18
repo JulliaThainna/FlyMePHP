@@ -29,6 +29,7 @@ class VooDAO{
 
     public function listarVoos($item){
         $voo = new Voo();
+        $voo->setId($item['id']);   
         $voo->setCompanhiaAereaId($item["companhia_aerea_id"]);
         $voo->setOrigem($item["origem"]);
         $voo->setDestino($item["destino"]);
@@ -58,7 +59,6 @@ class VooDAO{
             $sql = "DELETE FROM voo WHERE id = :id";
             $query = $this->conn->prepare($sql);
             $query->bindValue(":id", $voo->getId());
-
             return $query->execute();
         }catch(Exception $exception){
             print("Erro ao deletar Voo: $exception");

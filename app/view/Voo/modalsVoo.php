@@ -119,21 +119,21 @@
 <div class="modal fade" id="modal-deletarVoo" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title">Deletar Voo</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-            <h5>Você tem certeza que deseja deletar esse voo?</h5>
-            <p class="text-center">Cuidado, essa ação é irreversível!</p>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn botao-fechar" data-bs-dismiss="modal">Fechar</button>
-            <form action="../controller/VooController.php" method="post">
-                <input type="hidden" name="deletarVoo" id="delete-id-voo">
-                <button type="submit" class="btn botao-danger">Deletar</button>
-            </form>
-        </div>
+            <div class="modal-header">
+                <h5 class="modal-title">Deletar Voo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <h5>Você tem certeza que deseja deletar esse voo?</h5>
+                <p class="text-center">Cuidado, essa ação é irreversível!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn botao-fechar" data-bs-dismiss="modal">Fechar</button>
+                <form action="../controller/VooController.php" method="post">
+                    <input type="hidden" name="deletarVoo" id="delete-id-voo">
+                    <button type="submit" class="btn botao-danger">Deletar</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
