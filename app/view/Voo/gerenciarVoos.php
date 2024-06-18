@@ -49,7 +49,16 @@
                     <td><?= $voo->getValor() ?></td>
        
                     <td class="px-3">
-                        <button type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#modal-editarVoo">   
+                        <button type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#modal-editarVoo"
+                            onclick="document.getElementById('edit-id').value='<?= $voo->getId() ?>';
+                             document.getElementById('edit-companhia-aerea-id').value='<?= $voo->getCompanhiaAereaId() ?>';
+                             document.getElementById('edit-origem').value='<?= $voo->getOrigem() ?>';
+                             document.getElementById('edit-destino').value='<?= $voo->getDestino() ?>';
+                             document.getElementById('edit-data-horario').value='<?= $voo->getDataHorario() ?>';
+                             document.getElementById('edit-duracao').value='<?= $voo->getDuracao() ?>';
+                             document.getElementById('edit-assentos').value='<?= $voo->getAssentos() ?>';
+                             document.getElementById('edit-valor').value='<?= $voo->getValor() ?>';
+                        ">
                             Editar
                         </button>
                         <button type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#modal-deletarVoo" onclick="document.getElementById('delete-id-voo').value='<?= $voo->getId() ?>'">Deletar</button>

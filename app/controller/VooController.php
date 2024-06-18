@@ -37,6 +37,22 @@ class VooController{
         return $this->vooDAO->read();
     }
 
+    public function update(){
+        $data = filter_input_array(INPUT_POST);
+
+        $this->voo->setId($data["id"]);
+        $this->voo->setCompanhiaAereaId($data["companhia-aerea-id"]);
+        $this->voo->setOrigem($data["origem"]);
+        $this->voo->setDestino($data["destino"]);
+        $this->voo->setDataHorario($data["data_horario"]);
+        $this->voo->setDuracao($data["duracao"]);
+        $this->voo->setAssentos($data["assentos"]);
+        $this->voo->setValor($data["valor"]);
+
+        $this->vooDAO->update($this->voo);
+        header("Location: ../view/gerenciarSistema.php#tab1");
+    }
+
     public function delete(Voo $voo){
         $this->vooDAO->delete($voo);
         header("Location: ../view/gerenciarSistema.php#tab1");
@@ -54,6 +70,11 @@ $vooController = new VooController();
 //Se clicar no botão de cadastrar
 if(isset($_POST["cadastrarVoo"])){
     $vooController->create();
+}
+
+//Se clicar no botão de cadastrar
+if(isset($_POST["editarVoo"])){
+    $vooController->update();
 }
 
 //Quando clicar no botão deletar

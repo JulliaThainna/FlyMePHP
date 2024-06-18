@@ -54,6 +54,27 @@ class VooDAO{
         }
     }
 
+    public function update(Voo $voo){
+        try{
+            $sql = "UPDATE voo SET companhia_aerea_id = :companhia_aerea_id, origem = :origem, destino = :destino, 
+                        data_horario = :data_horario, duracao = :duracao, assentos = :assentos, valor = :valor WHERE id = :id";
+            $query = $this->conn->prepare($sql);
+            
+            $query->bindValue(":id", $voo->getId());
+            $query->bindValue(":companhia_aerea_id", $voo->getCompanhiaAereaId());
+            $query->bindValue(":origem", $voo->getOrigem());
+            $query->bindValue(":destino", $voo->getDestino());
+            $query->bindValue(":data_horario", $voo->getDataHorario());
+            $query->bindValue(":duracao", $voo->getDuracao());
+            $query->bindValue(":assentos", $voo->getAssentos());
+            $query->bindValue(":valor", $voo->getValor());
+            
+            return $query->execute();
+    }catch(Exception $exception){   
+            print("Erro ao editar Voo: $exception");
+        }
+    }
+
     public function delete(Voo $voo){
         try{
             $sql = "DELETE FROM voo WHERE id = :id";

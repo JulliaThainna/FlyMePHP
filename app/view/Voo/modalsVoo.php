@@ -25,8 +25,8 @@
                         <input type="text" class="form-control rounded-5" name="destino" id="create-destino" required>
                     </div>
                     <div class="mt-3">
-                        <label for="create-data-hora" class="form-label">Data/Horário</label>
-                        <input type="datetime-local" class="form-control rounded-5" name="data_horario" id="create-data-hora" required>
+                        <label for="create-data-horario" class="form-label">Data/Horário</label>
+                        <input type="datetime-local" class="form-control rounded-5" name="data_horario" id="create-data-horario" required>
                     </div>
                     <div class="mt-3">
                         <label for="create-duracao" class="form-label">Duração (em horas)</label>
@@ -62,55 +62,55 @@
 <div class="modal fade" id="modal-editarVoo" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title">Editar voo</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-            <form>
-                <div class="mt-3">
-                    <label for="edit-companhia-aerea-id" class="form-label">Companhia aérea</label>
-                    <select name="companhia-aerea-id" class="form-control rounded-5" id="edit-companhia-aerea-id" required>
-                        <?php foreach ($listCAs as $ca): ?>
-                            <option value="<?= $ca['id'] ?>"><?= $ca['nome']?></option>
-                        <?php endforeach; ?>
-                    </select>
-                </div>
-                <div class="mt-3">
-                    <label for="origemModal" class="form-label">Origem</label>
-                    <input type="text" class="form-control rounded-5" id="origemModal" disabled>
-                </div>
-                <div class="mt-3">
-                    <label for="destinoModal" class="form-label">Destino</label>
-                    <input type="text" class="form-control rounded-5" id="destinoModal" disabled>
-                </div>
-                <div class="mt-3">
-                    <label for="data-horarioModal" class="form-label">Data/Horário</label>
-                    <input type="datetime-local" value="2017-06-01T08:30" class="form-control rounded-5" id="data-horarioModal">
-                </div>
-                <div class="mt-3">
-                    <label for="duracaoModal" class="form-label">Duração (em horas)</label>
-                    <input type="number" class="form-control rounded-5" id="duracaoModal">
-                </div>
-                <div class="mt-3">
-                    <label for="assentosModal" class="form-label">Assentos</label>
-                    <input type="number" class="form-control rounded-5" id="assentosModal">
-                </div>
-                <!-- <div class="mt-3">
-                    <label for="classeModal" class="form-label">Classe</label>
-                    <input type="text" class="form-control rounded-5" id="classeModal" disabled>
-                </div> -->
-                <div class="mt-3">
-                    <label for="valorModal" class="form-label">Valor</label>
-                    <input type="text" class="form-control rounded-5" id="valorModal" disabled>
-                </div>
-                <p style="font-size: 0.7rem;" class="mt-5">Observação: Só é possível alterar a data/horário, duração e quantidade de assentos do voo.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn botao-fechar" data-bs-dismiss="modal">Fechar</button>
-                    <button type="submit" class="btn">Editar</button>
-                </div>
-            </form>
+            <div class="modal-header">
+                <h5 class="modal-title">Editar voo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form action="../controller/VooController.php" method="post">
+                <input type="hidden" name="id" id="edit-id">   
+                    <div class="mt-3">
+                        <label for="edit-companhia-aerea-id" class="form-label">Companhia aérea</label>
+                        <select name="companhia-aerea-id" class="form-control rounded-5" id="edit-companhia-aerea-id" required>
+                            <?php foreach ($listCAs as $ca): ?>
+                                <option value="<?= $ca['id'] ?>"><?= $ca['nome']?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <div class="mt-3">
+                        <label for="edit-origem" class="form-label">Origem</label>
+                        <input type="text" class="form-control rounded-5" name="origem" id="edit-origem">
+                    </div>
+                    <div class="mt-3">
+                        <label for="edit-destino" class="form-label">Destino</label>
+                        <input type="text" class="form-control rounded-5" name="destino" id="edit-destino">
+                    </div>
+                    <div class="mt-3">
+                        <label for="edit-data-horario" class="form-label">Data/Horário</label>
+                        <input type="datetime-local" class="form-control rounded-5" name="data_horario" id="edit-data-horario">
+                    </div>
+                    <div class="mt-3">
+                        <label for="edit-duracao" class="form-label">Duração (em horas)</label>
+                        <input type="number" class="form-control rounded-5" name="duracao" id="edit-duracao">
+                    </div>
+                    <div class="mt-3">
+                        <label for="edit-assentos" class="form-label">Assentos</label>
+                        <input type="number" class="form-control rounded-5" name="assentos" id="edit-assentos">
+                    </div>
+                    <div class="mt-3">
+                        <label for="edit-valor" class="form-label">Valor</label>
+                        <input type="text" class="form-control rounded-5" name="valor" id="edit-valor">
+                    </div>
+                    <!-- <div class="mt-3">
+                        <label for="classeModal" class="form-label">Classe</label>
+                        <input type="text" class="form-control rounded-5" id="classeModal" disabled>
+                    </div> -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn botao-fechar" data-bs-dismiss="modal">Fechar</button>
+                        <button type="submit" class="btn" name="editarVoo">Editar</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
